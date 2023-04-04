@@ -125,6 +125,11 @@ export default function Service1() {
           right: 5px;
           top: 50%;
           transform: translate(0%, -50%);
+          transition: 0.5s;
+        }
+        form button:hover {
+          background: #dfdfdfaa;
+          color: #525ffb;
         }
         .right {
           display: flex;
