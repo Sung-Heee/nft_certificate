@@ -46,7 +46,7 @@ export default function Service1() {
               type="text"
               value={randomId}
               onChange={(e) => setRandomId(e.target.value)}
-              placeholder="공유 코드를 입력해주세요."
+              placeholder="공유 코드를 입력해 주세요."
               required
             />
             <button type="submit">
