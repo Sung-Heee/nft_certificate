@@ -61,9 +61,24 @@ export default function Service1() {
       </div>
 
       <style jsx>{`
-        article {
+        {/* article {
+          padding: 0px 100px 0px 100px;
+          height: 100vh;
+          width: 90%;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          justify-content: space-between;
+          align-items: center;
           display: flex;
-        }
+        } */}
+        article {
+                    display:flex;
+                    height: calc(100vh - 100px);
+                    margin-top: 100px;
+                    padding: 0 100px 0 100px;
+                }
+
         .left {
           display: flex;
           flex-direction: column;

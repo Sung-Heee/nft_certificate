@@ -1,6 +1,7 @@
 import axios from 'axios'
-import { useState } from 'react'
-
+import swal from "sweetalert";
+import { useState } from 'react';
+import Router from 'next/router';
 
 export default function Setting({account}){
   const [username, setUsername] = useState("");
@@ -44,6 +45,11 @@ export default function Setting({account}){
 
     
     <style jsx>{`
+    article {
+            height: calc(100vh - 100px);
+            margin-top: 100px;
+            padding: 0 100px 0 100px;
+            }
       h1{
         font-size:30px;
       }

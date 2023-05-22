@@ -129,6 +129,12 @@ export default function mypage({ caver, account, newKip17addr }) {
       </Box>
 
       <style jsx>{`
+        article {
+            height: calc(100vh - 100px);
+            margin-top: 100px;
+            padding: 0 100px 0 100px;
+            }
+
         .mypage {
           display: flex;
           flex-direction: column;

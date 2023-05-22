@@ -39,7 +39,8 @@ export default function upload({ caver, account, newKip17addr }) {
     setCategory(selected_id);
   };
 
-  const createNFT = async () => {
+  const createNFT = async (e) => {
+    e.preventDefault(); // 자동 새로고침 방지
     const tokenContract = await new caver.klay.Contract(
       nfts.abi,
       newKip17addr,
@@ -74,13 +75,19 @@ export default function upload({ caver, account, newKip17addr }) {
   };
 
   return (
+    
     <article>
-      <div>
-        <h1>Upload</h1>
-        <p>
-          <span className="require">* </span> required
-        </p>
+      <div className="upload">
+        <div className="upload_top">
+        <label>
+          Upload 
+        </label>
+        <p><span className="require">*</span> 필수항목</p>
+        </div>
+        <hr />
+        <div className="upload_container">
 
+        <div className="upload_left_container">
         <form className="main">
           <div className="upload_div">
             <label>
@@ -103,6 +110,7 @@ export default function upload({ caver, account, newKip17addr }) {
                 )}
               </label>
               <input
+              className="fileInput"
                 type="file"
                 name="file"
                 id="fileInput"
@@ -111,6 +119,12 @@ export default function upload({ caver, account, newKip17addr }) {
             </div>
           </div>
 
+          </form>
+          </div>
+          
+          <div className="upload_right_container">
+          <form className="main">
+            
           <div className="upload_div">
             <label>
               name <span className="require">*</span>
@@ -195,27 +209,66 @@ export default function upload({ caver, account, newKip17addr }) {
               ></input>
             </div>
           </div>
-        </form>
 
-        <button className="sub" onClick={createNFT}>
-          create NFT
-        </button>
-      </div>
+          <div className="btn_div">
+            <button className="create__btn" onClick={createNFT}>
+              CREATE NFT
+            </button>
+            <button className="cancel__btn" >
+              CANCEL
+            </button>
+          </div>
+
+        </form>
+        </div>
+        </div>
+        </div>
 
       <style jsx>{`
+
+        article{
+          position: relative;
+          padding: 0 100px 0 100px;
+          height: 100vh;
+          {/* height: calc(100vh - 100px); */}
+        }
+        .upload_top {
+          padding: 10px 10px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .upload {
+          width: 70%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        .upload_container {
+          padding: 0 50px;
+          display: flex;
+          margin-top: 50px;
+          justify-content: space-evenly
+        }
+
+        .upload_left_container {
+          width: 50%;
+        }
+
+        .upload_right_container {
+          width: 50%;
+        }
         h1 {
           color: #0c135e;
           font-size: 30px;
           font-weight: bold;
         }
-        p {
-          margin-bottom: 40px;
-        }
+ 
         label {
           color: #0c135e;
           font-size: 25px;
           font-weight: bold;
-          margin-bottom: 5px;
         }
         .form-input {
           display: block;
@@ -237,14 +290,37 @@ export default function upload({ caver, account, newKip17addr }) {
           font-weight: bold;
           color: crimson;
         }
-        .sub {
-          background-color: transparent;
+        .create__btn {
+          width: 150px;
+          background-color: #525ffb;
+          color: #fff;
+          border: 1px solid #525ffb;
+          padding: 10px 30px;
+          border-radius: 40px;
+          cursor: pointer;
+          margin-top: 20px;
+          font-weight: bold;
+          transition: 0.3s;
+        }
+
+        .create__btn:hover {
+        }
+
+        .cancel__btn {
+          width: 150px;
+          margin-left: 10px;
+          background-color: #fff;
           color: #525ffb;
           border: 1px solid #525ffb;
           padding: 10px 30px;
           border-radius: 40px;
           cursor: pointer;
           margin-top: 20px;
+          font-weight: bold;
+          transition: 0.3s;
+        }
+
+        .cancel__btn:hover {
         }
         .upload_div {
           margin-bottom: 20px;
@@ -252,8 +328,8 @@ export default function upload({ caver, account, newKip17addr }) {
 
         .file label {
           display: flex;
-          width: 350px;
-          height: 350px;
+          width: 300px;
+          height: 300px;
           align-items: center;
           justify-content: center;
           padding: 1em 1em;
@@ -273,14 +349,19 @@ export default function upload({ caver, account, newKip17addr }) {
         }
         .file img {
           display: flex;
-          width: 350px;
-          height: 350px;
+          width: 300px;
+          height: 300px;
           padding: 0.5em 0.5em;
           border-radius: 12px;
         }
         .file input {
           overflow: hidden;
         }
+        .btn_div {
+          display: flex;
+          justify-content: flex-end;
+        }
+      
       `}</style>
     </article>
   );

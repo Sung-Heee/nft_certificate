@@ -31,7 +31,7 @@ export default function KIP({ nftlist }) {
       <style jsx>{`
         .token {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(5, 1fr);
           grid-template-rows: repeat(auto-fill, minmax(1fr, auto));
           margin: auto;
           align-items: center;

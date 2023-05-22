@@ -120,11 +120,7 @@ a {
   word-break: break-all;
 }
 
-html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: "Poppins", sans-serif;
   background-image: url(../public/bg.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -135,8 +131,9 @@ a {
   text-decoration: none;
 }
 
-section {
-  padding: 0px 100px 0px 100px;
+.container {
+  position: relative;
+  min-height: 100vh;
 }
 
 article {
@@ -144,11 +141,11 @@ article {
   margin: auto;
   justify-content: space-between;
   align-items: center;
-  height: 100vh;
 }
 
 footer {
-  padding: 30px 0;
+  padding: 100px 100px;
+  border-top: 1px solid #e6e6e6;
 }
 
 .grid-services {

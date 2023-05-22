@@ -57,7 +57,7 @@ export default function App({ Component, pageProps }) {
   };
 
   return (
-    <>
+    <div className="container">
       <Head>
         <title>Bertify</title>
         <link rel="icon" href="/logo.png" />
@@ -100,10 +100,9 @@ export default function App({ Component, pageProps }) {
           />
         )}
       </section>
-
       <footer>
-        <Footer />
+      <Footer />
       </footer>
-    </>
+    </div>
   );
 }

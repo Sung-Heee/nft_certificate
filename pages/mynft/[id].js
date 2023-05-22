@@ -161,11 +161,12 @@ export default function Post ({account, newKip17addr}){
       
             .main {
                 display:flex;
-                width:95%
+                height: 100vh;
+                width:70%;
                 margin:auto;
-                margin-top:150px;
                 align-items:center;
-                flex-direction:row;
+                justify-content: space-between;
+            
             }
             .left_main {
                display:flex;
@@ -174,7 +175,7 @@ export default function Post ({account, newKip17addr}){
 
             }
             .left_img {
-                width: 90%;
+                width: 60%;
                 height:50vh;
                 background: rgb(250, 251, 252);
                 border-radius: 15px;
